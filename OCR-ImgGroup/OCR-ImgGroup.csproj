@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<RootNamespace>OCR_ImgGroup</RootNamespace>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<Platforms>AnyCPU;x64</Platforms>
+		<ApplicationIcon>logo.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="logo.ico" />
+		<None Remove="logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.11.0.20250507" />
+	  <PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl" Version="3.0.0.51" />
+	  <PackageReference Include="Sdcb.PaddleOCR" Version="3.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="logo.ico" />
+		<Resource Include="logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="ch_PP-OCRv4\ch_PP-OCRv4_det_infer\inference.pdiparams">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_PP-OCRv4_det_infer\inference.pdiparams.info">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_PP-OCRv4_det_infer\inference.pdmodel">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_PP-OCRv4_rec_infer\inference.pdiparams">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_PP-OCRv4_rec_infer\inference.pdiparams.info">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_PP-OCRv4_rec_infer\inference.pdmodel">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_ppocr_mobile_v2.0_cls_infer\inference.pdiparams">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_ppocr_mobile_v2.0_cls_infer\inference.pdiparams.info">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ch_ppocr_mobile_v2.0_cls_infer\inference.pdmodel">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="ch_PP-OCRv4\ppocr_keys.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
